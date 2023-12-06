@@ -1,9 +1,17 @@
 <div class="container">
-  <h1>{{ 'hello' | transloco }}, {{ username }}!</h1>
+  <div class="greeting">
+    <div class="greeting-img">
+      <img src="../../../assets/img/user.svg" alt="user">
+    </div>
+    <div class="greeting-meta">
+      <div class="greeting-meta-title">{{ 'hello' | transloco }}, {{ username }}!</div>
+      <div class="greeting-meta-subtitle">{{ 'Let\'s discover the perfect place for today' | transloco}}</div>
+    </div>
+  </div>
 
   <div class="menu">
     <button [routerLink]="'onboarding'">Onboarding</button>
-    <button [routerLink]="'settings'">Settings</button>
+    <button [routerLink]="'settings'">{{ 'Settings' | transloco}}</button>
   </div>
 </div>
 
