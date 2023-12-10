@@ -9,7 +9,9 @@ export class TelegramService {
   tg: any;
   username: string;
 
-  constructor(@Inject(DOCUMENT) private _document: Document) {
+  constructor(
+    @Inject(DOCUMENT) private _document: Document
+  ) {
     this.window = this._document.defaultView;
     this.tg = this.window?.Telegram.WebApp;
   }
