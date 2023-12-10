@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.username = this.tgService.username ? this.tgService.username : 'User';
+    this.username = this.tgService.tg.first_name ? this.tgService.tg.first_name : 'User';
   }
 
 }

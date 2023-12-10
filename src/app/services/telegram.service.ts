@@ -7,7 +7,6 @@ import {DOCUMENT} from "@angular/common";
 export class TelegramService {
   private window;
   tg: any;
-  username: string;
 
   constructor(
     @Inject(DOCUMENT) private _document: Document
