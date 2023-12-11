@@ -5,9 +5,11 @@ import {DOCUMENT} from "@angular/common";
   providedIn: 'root'
 })
 export class TelegramService {
-
   private window;
   tg: any;
+  private retryCount = 0;
+  private maxRetries = 3;
+  tgNotAvailable: boolean = false
 
   constructor(
     @Inject(DOCUMENT) private _document: Document
@@ -19,7 +21,14 @@ export class TelegramService {
   private initializeTelegramObject(): void {
     if (this.window && this.window.Telegram && this.window.Telegram.WebApp) {
       this.tg = this.window.Telegram.WebApp;
+    } else if (this.retryCount < this.maxRetries) {
+      setTimeout(() => {
+        this.retryCount++;
+        this.initializeTelegramObject();
+      }, 1500);
+    } else {
+      this.tgNotAvailable = true;
+      console.error('Failed to initialize Telegram WebApp after several attempts.');
     }
   }
-
 }

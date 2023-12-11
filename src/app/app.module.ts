@@ -10,6 +10,7 @@ import {OnboardingComponent} from "./main/onboarding/onboarding.component";
 import {SettingsComponent} from "./main/settings/settings.component";
 import {SettingsLanguageComponent} from "./main/settings/settings-language/settings-language.component";
 import {BreadcrumbsComponent} from "./main/components/breadcrumbs/breadcrumbs.component";
+import {LoaderComponent} from "./shared/loader/loader.component";
 
 @NgModule({
   declarations: [
@@ -21,12 +22,13 @@ import {BreadcrumbsComponent} from "./main/components/breadcrumbs/breadcrumbs.co
     SettingsLanguageComponent,
     BreadcrumbsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    TranslocoRootModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        TranslocoRootModule,
+        LoaderComponent,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

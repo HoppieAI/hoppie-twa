@@ -1,17 +1,20 @@
 <div class="container">
+  @if(loaded){
   <div class="greeting">
     <div class="greeting-img">
-      <img src="../../../assets/img/user.svg" alt="user">
+      <img [src]="userPicUrl" alt="Profile picture of user">
     </div>
     <div class="greeting-meta">
       <div class="greeting-meta-title">{{ 'hello' | transloco }}, {{ userName }}!</div>
-      <div class="greeting-meta-subtitle">{{ 'Let\'s discover the perfect place for today' | transloco}}</div>
+        <div class="greeting-meta-subtitle">{{ 'Let\'s discover the perfect place for today' | transloco}}</div>
+      </div>
     </div>
-  </div>
 
-  <div class="menu">
-    <button [routerLink]="'onboarding'">Onboarding</button>
-    <button [routerLink]="'settings'">{{ 'Settings' | transloco}}</button>
-  </div>
+    <div class="menu">
+      <button [routerLink]="'onboarding'">Onboarding</button>
+      <button [routerLink]="'settings'">{{ 'Settings' | transloco}}</button>
+    </div>
+  } @else {
+  <app-loader></app-loader>
+  }
 </div>
-

@@ -8,6 +8,7 @@ import {TelegramService} from "../../services/telegram.service";
 })
 export class HomeComponent implements OnInit{
 
+  loaded = false;
   userName: string;
   userPicUrl: string
   constructor(
@@ -19,6 +20,7 @@ export class HomeComponent implements OnInit{
     this.userName = this.tgService.tg.initDataUnsafe?.user?.first_name || 'User';
     const profilePicUrl = this.tgService.tg.initDataUnsafe?.user?.photo_url;
     this.userPicUrl = profilePicUrl || '../../../assets/img/user.svg';
+    this.loaded = true;
   }
 
 }
