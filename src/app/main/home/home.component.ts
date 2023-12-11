@@ -9,13 +9,16 @@ import {TelegramService} from "../../services/telegram.service";
 export class HomeComponent implements OnInit{
 
   userName: string;
+  userPicUrl: string
   constructor(
     public tgService: TelegramService
   ) {
   }
 
   ngOnInit(): void {
-    this.userName = this.tgService.userFirstName || 'User';
+    this.userName = this.tgService.tg.initDataUnsafe?.user?.first_name || 'User';
+    const profilePicUrl = this.tgService.tg.initDataUnsafe?.user?.photo_url;
+    this.userPicUrl = profilePicUrl || '../../../assets/img/user.svg';
   }
 
 }
