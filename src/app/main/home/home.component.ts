@@ -18,8 +18,7 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(): void {
     this.userName = this.tgService.tg.initDataUnsafe?.user?.first_name || 'User';
-    const profilePicUrl = this.tgService.tg.initDataUnsafe?.user?.photo_url;
-    this.userPicUrl = profilePicUrl || '../../../assets/img/user.svg';
+    this.userPicUrl = this.tgService.tg.initDataUnsafe?.user?.photo_url || '../../../assets/img/user.svg';
     this.loaded = true;
   }
 

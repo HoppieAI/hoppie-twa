@@ -1,0 +1,126 @@
+/*----------BUTTONS----------*/
+
+
+@mixin btn-purple {
+  background: var(--main-grad);
+  color: var(--inverted-primary-text);
+  box-shadow: var(--main-color-shadow);
+  &.disabled {
+    background: var(--disabled-btn);
+  }
+  &.active{
+    opacity: .6;
+  }
+}
+
+@mixin btn-white {
+  background: var(--white-btn-bg);
+  color: var(--inverted-primary-text);
+  box-shadow: var(--black-shadow);
+  &.disabled {
+    background: var(--disabled-btn);
+  }
+  &.active{
+    opacity: .6;
+  }
+}
+
+@mixin btn-xs {
+  min-height: 28px;
+  max-height: 48px;
+  padding: 0 16px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+@mixin btn-s {
+  //min-height: 28px;
+  //max-height: 48px;
+  padding: 12px 32px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+@mixin btn-xl {
+  //height: 48px;
+  font-size: 16px;
+  border-radius: 16px;
+  padding: 16px 24px;
+  width: 100%;
+}
+
+@mixin button-main {
+  border: none;
+  font-weight: 600;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-decoration: none;
+  transition: all 200ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  > .material-icons {
+    font-size: 18px;
+  }
+}
+
+
+/*----------INPUTS----------*/
+
+//
+//@mixin input-basic {
+//  padding: 8px 14px;
+//  font-size: 16px;
+//  border-radius: 8px;
+//  border: 1px solid var(--secondary-text);
+//  box-sizing: border-box;
+//  outline: none;
+//  color: var(--primary-text);
+//  transition: border .2s ease;
+//  &:focus{
+//    border: 1px solid map-get($fahrly-palette, 500);
+//  }
+//  background-color: transparent;
+//  //background-color: var(--third-level-bg);
+//}
+//
+//@mixin input-small {
+//  padding: 4px 8px;
+//  font-size: 14px;
+//  border-radius: 4px;
+//  width: 100%;
+//  border: 1px solid var(--secondary-text);
+//  box-sizing: border-box;
+//  outline: none;
+//  color: var(--primary-text);
+//  background-color: var(--third-level-bg);
+//}
+//
+//@mixin select-basic {
+//  padding: 8px 16px;
+//  border-radius: 4px;
+//  outline: none;
+//  background-color: var(--third-level-bg);
+//  color: var(--primary-text);
+//  border: none;
+//  border-right: 16px solid transparent;
+//  font-size: 14px;
+//  font-weight: 300;
+//  cursor: pointer;
+//
+//  &.disabled {
+//    opacity: .2!important;
+//    cursor: unset;
+//  }
+//}

@@ -11,8 +11,8 @@
     </div>
 
     <div class="menu">
-      <button [routerLink]="'onboarding'">Onboarding</button>
-      <button [routerLink]="'settings'">{{ 'Settings' | transloco}}</button>
+      <button class="btn-xl btn-purple" [routerLink]="'onboarding'">Onboarding</button>
+      <button class="btn-xl btn-purple" [routerLink]="'settings'">{{ 'Settings' | transloco}}</button>
     </div>
   } @else {
   <app-loader></app-loader>
