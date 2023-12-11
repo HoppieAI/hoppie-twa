@@ -1,9 +1,15 @@
 import {Inject, Injectable} from "@angular/core";
 import {DOCUMENT} from "@angular/common";
 
+interface TgButton {
+  show(): void;
+  hide(): void;
+  setText(text: string): void;
+}
 @Injectable({
   providedIn: 'root'
 })
+
 export class TelegramService {
   private window;
   tg: any;
@@ -28,7 +34,10 @@ export class TelegramService {
       }, 1500);
     } else {
       this.tgNotAvailable = true;
-      console.error('Failed to initialize Telegram WebApp after several attempts.');
     }
+  }
+
+  get MainButton(): TgButton{
+    return this.tg.MainButton;
   }
 }
