@@ -8,14 +8,14 @@ import {TelegramService} from "../../services/telegram.service";
 })
 export class HomeComponent implements OnInit{
 
-  username: string;
+  userName: string;
   constructor(
     public tgService: TelegramService
   ) {
   }
 
   ngOnInit(): void {
-    this.username = this.tgService.tg.first_name ? this.tgService.tg.first_name : 'User';
+    this.userName = this.tgService.userFirstName || 'User';
   }
 
 }
